@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class='ie8' lang='pl'> <![endif]-->
+<html lang='pl'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv="X-UA-Compatible" content='IE=edge' />
+    <title>Szyfrowanie danych metodą Gronsfelda</title>
+    <meta name='description' content='Szyfrowanie danych metodą Gronsfelda' />
+	<meta name='keywords' content='szyfrowanie, kodowanie, dane, gronsfeld' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<!--[if lt IE 9]>
+		<script src='//html5shim.googlecode.com/svn/trunk/html5.js'></script>
+	<![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Rajdhani&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='css/normalize.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+	<script src='js/encryption.js'></script>
+  </head>
+  <body>
+
+  	<section class='b-encryption'>
+  		<h1 class='b-encryption__header'>Szyfrowanie danych metodą Gronsfelda</h1>
+  		<div class='b-encryption__fields-wrapper'>
+	  		<p class='b-encryption__data-field-header'>Dane odszyfrowane:</p>
+	  		<textarea class='b-encryption__data-field b-encryption__data-field--cipher' placeholder='. . .' spellcheck='false'></textarea>
+  		</div>
+  		<div class='b-encryption__fields-wrapper'>
+  			<p class='b-encryption__data-field-header'>Dane zaszyfrowane:</p>
+  			<textarea class='b-encryption__data-field b-encryption__data-field--decipher' placeholder='. . .' spellcheck='false'></textarea>
+  		</div>
+  		<div class='b-encryption__buttons-wrapper'>
+	  		<input type='button' class='b-encryption__button b-encryption__button--cipher' value='Szyfruj'/>
+	  		<input type='button' class='b-encryption__button b-encryption__button--decipher' value='Odszyfruj' />
+  		</div>
+  		<p class='b-encryption__data-field-header--centered'>Klucz szyfrujący*:</p>
+  		<input type='text' class='b-encryption__data-field b-encryption__data-field--key' />
+  		<small class='b-encryption__note'>* tylko cyfry</small>
+  	</section>
+
+	<script>
+		$(document).ready(function() {
+			
+			/* Obsługa warstwy prezentacji */
+			var result = '', // wynik szyfrowania / odszyfrowywania (reset)
+				dataToCipher, // dane do zaszyfrowania
+				dataToDecipher, // dane do odszyfrowania
+				key; // klucz szyfrujący
+
+			$(".b-encryption__data-field--cipher").val(''); // dane do zaszyfrowania (reset)
+			$(".b-encryption__data-field--decipher").val(''); // dane do odszyfrowania (reset)
+			$(".b-encryption__data-field--key").val(31206); // dane do odszyfrowania (reset)
+			
+			/* Obsługa szyfrowania danych */
+			$(".b-encryption__button--cipher").on('click', function(e) { 
+				e.stopPropagation();
+				dataToCipher = $(".b-encryption__data-field--cipher").val(); // pobierz dane do zaszyfrowania
+				key = $(".b-encryption__data-field--key").val(); // pobierz klucz szyfrujący
+				result = encryption(dataToCipher, key, 0); // wykonaj funkcję szyfrującą
+				$(".b-encryption__data-field--decipher").val(result); // wyświetl zaszyfrowane dane
+			});
+
+			/* Obsługa odszyfrowania danych */
+			$(".b-encryption__button--decipher").on('click', function(e) {
+				e.stopPropagation();
+				dataToDecipher = $(".b-encryption__data-field--decipher").val(); // pobierz dane do odszyfrowania
+				key = $(".b-encryption__data-field--key").val(); // pobierz klucz szyfrujący
+				result = encryption(dataToDecipher, key, 1); // wykonaj funkcję szyfrującą
+				$(".b-encryption__data-field--cipher").val(result); // wyświetl odszyfrowane dane
+			});
+
+			/* Obsługa klucza szyfrującego */
+			$(".b-encryption__data-field--key").on('keydown', function(e) {
+				if ((e.which < 48 || e.which > 57) && e.which != 46 && e.which != 8) { // zablokuj niedozwolone znaki
+					e.stopPropagation();
+					return false;
+				}
+			});
+		});
+	</script>
+	</body>
+</html>

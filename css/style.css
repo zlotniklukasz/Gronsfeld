@@ -1,0 +1,228 @@
+/* ---------------------------------------- */
+        /* GENERAL DOCUMENT STYLING */
+/* ---------------------------------------- */
+
+body {
+	background: #151515;
+	color: #FFF;
+	font-family: 'Rajdhani', Monaco, monospace;
+	font-size: 62.5%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background: #444;
+	color: #FFF;
+}
+
+::selection  {
+	background: #444;
+	color: #FFF;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+/* ---------------------------------------- */
+          	/* APP STYLING */
+/* ---------------------------------------- */
+
+.b-encryption {
+	font-size: 1.5em;
+	height: 10em;
+	letter-spacing: 2px;
+	margin: 1em auto;
+	width: 39em;
+}
+
+.b-encryption__header {
+	border-bottom: solid 1px #222;
+	height: 1.2em;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.b-encryption__fields-wrapper {
+	display: inline-block;
+}
+
+.b-encryption__data-field {
+	background: #222;
+	background: linear-gradient(#333, #222);    
+	border: 1px solid #444;
+	-moz-border-radius: .5em;
+	-ms-border-radius: .5em;
+	-o-border-radius: .5em;
+	-webkit-border-radius: .5em;
+    border-radius: .5em;
+    box-shadow: 2px 2px 2px #000;
+    margin: 0 .35em;
+    overflow: hidden;
+    padding: .5em;
+    resize: none;
+    outline: none;
+}
+
+.b-encryption__data-field--cipher, .b-encryption__data-field--decipher {
+    height: 11em;
+    width: 18.6em;
+}
+
+.b-encryption__data-field:focus {
+	border: 1px solid #0C6;
+	box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
+	-moz-transition: all .25s;
+	-ms-transition: all .25s;
+	-o-transition: all .25s;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+
+.b-encryption__buttons-wrapper {
+	background: #111;
+	border: 1px solid #000;
+	-moz-border-radius: .5px;
+	-ms-border-radius: .5px;
+	-o-border-radius: .5px;
+	-webkit-border-radius: .5px;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	margin: 1em auto;
+	padding: 1em;
+	width: 17em;
+}
+
+.b-encryption__button {
+	background: #222;
+    background: linear-gradient(#333, #222);
+	border: 1px solid #444;
+	-moz-border-radius: .5em;
+	-ms-border-radius: .5em;
+	-o-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	border-radius: .5em;
+	display: block;
+	height: 2.5em;
+	outline: none;
+	width: 100%;
+}
+
+.b-encryption__button:hover {
+	border: 1px solid #0C6;
+	box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
+	-moz-transition: all .25s;
+	-ms-transition: all .25s;
+	-o-transition: all .25s;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+
+.b-encryption__button--decipher {
+	margin-top: .25em;
+}
+
+.b-encryption__data-field-header {
+	margin-left: .5em;
+}
+
+.b-encryption__data-field-header--centered {
+	text-align: center;
+}
+
+.b-encryption__data-field--key {
+	display: block;
+	height: 2em;
+	margin: 0 auto;
+	text-align: center;
+	width: 9em;
+}
+
+.b-encryption__buttons-wrapper:after, .b-encryption__buttons-wrapper:before {
+	content: '';
+    display: block; 
+    height: 1px;
+ 	left: 0;
+	position: absolute;
+	width: 100%;
+    z-index: -1;
+}
+
+.b-encryption__buttons-wrapper:before {
+   	background: #333;
+   	top: 338px;
+}
+
+.b-encryption__buttons-wrapper:after {
+  	background: #000;
+   	top: 337px;
+}
+
+.b-encryption__note {
+	display: block;
+	margin: .25em auto 2em;
+	width: 8em;
+}
+
+/* ---------------------------------------- */
+                 /* RWD */
+/* ---------------------------------------- */
+
+@media only screen and (max-width: 600px) { 
+
+	.b-encryption {
+		font-size: 1.25em;
+		height: 100%;
+		min-width: 16em;
+		width: 90%;
+	}
+
+	.b-encryption__header {
+		height: auto;
+	}
+
+	.b-encryption__fields-wrapper {
+    	width: 100%;
+	}
+
+	.b-encryption__data-field {
+		margin: 0 auto;
+	}
+
+	.b-encryption__data-field--cipher, .b-encryption__data-field--decipher {
+		height: 8em;
+	    width: 100%;
+	}
+
+	.b-encryption__data-field--key {
+		font-size: 1.2em;
+	}
+
+	.b-encryption__buttons-wrapper:after, .b-encryption__buttons-wrapper:before {
+		display: none;
+	}
+
+	.b-encryption__buttons-wrapper {
+		max-width: 21em;
+		width: 85%;
+	}
+
+	.b-encryption__button {
+		font-size: 1.1em;
+	}
+}
+
+@media only screen and (max-width: 290px) { 
+	
+	.b-encryption__header {
+		font-size: 1.5em;
+	}
+}
