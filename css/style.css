@@ -10,6 +10,10 @@ body {
 }
 
 * {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -64,6 +68,10 @@ a:link, a:visited {
 	-o-border-radius: .5em;
 	-webkit-border-radius: .5em;
     border-radius: .5em;
+    -moz-box-shadow: 2px 2px 2px #000;
+	-ms-box-shadow: 2px 2px 2px #000;
+	-o-box-shadow: 2px 2px 2px #000;
+	-webkit-box-shadow: 2px 2px 2px #000;
     box-shadow: 2px 2px 2px #000;
     margin: 0 .35em;
     overflow: hidden;
@@ -79,6 +87,10 @@ a:link, a:visited {
 
 .b-encryption__data-field:focus {
 	border: 1px solid #0C6;
+	-moz-box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
+	-ms-box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
+	-o-box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
+	-webkit-box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
 	box-shadow: 0 0 8px rgba(0,204,102,.8), inset 0 0 5px rgba(0,204,102,.6);
 	-moz-transition: all .25s;
 	-ms-transition: all .25s;
@@ -95,6 +107,10 @@ a:link, a:visited {
 	-o-border-radius: .5px;
 	-webkit-border-radius: .5px;
 	border-radius: 5px;
+	-moz-box-shadow: inset 0 0 0 1px #272727;
+	-ms-box-shadow: inset 0 0 0 1px #272727;
+	-o-box-shadow: inset 0 0 0 1px #272727;
+	-webkit-box-shadow: inset 0 0 0 1px #272727;
 	box-shadow: inset 0 0 0 1px #272727;
 	margin: 1em auto;
 	padding: 1em;
@@ -118,6 +134,10 @@ a:link, a:visited {
 
 .b-encryption__button:hover {
 	border: 1px solid #0C6;
+	-moz-box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
+	-ms-box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
+	-o-box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
+	-webkit-box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
 	box-shadow: 0 0 4px rgba(0,204,102,.8), inset 0 0 2px rgba(0,204,102,.6);
 	-moz-transition: all .25s;
 	-ms-transition: all .25s;
